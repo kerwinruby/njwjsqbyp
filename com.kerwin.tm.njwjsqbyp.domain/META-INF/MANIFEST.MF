@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Domain
+Bundle-SymbolicName: com.kerwin.tm.njwjsqbyp.domain;singleton:=true
+Bundle-Version: 0.0.1.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Require-Bundle: javax.persistence;bundle-version="2.1.0"
+Export-Package: com.kerwin.tm.njwjsqbyp.domain
