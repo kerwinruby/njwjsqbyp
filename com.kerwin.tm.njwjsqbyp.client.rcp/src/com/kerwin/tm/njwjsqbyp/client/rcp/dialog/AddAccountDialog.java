@@ -3,11 +3,12 @@ package com.kerwin.tm.njwjsqbyp.client.rcp.dialog;
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.swt.widgets.Shell;
 
-import com.kerwin.tm.njwjsqbyp.client.rcp.serviceretrieval.Services;
 import com.kerwin.tm.njwjsqbyp.database.AccountDBService;
 import com.kerwin.tm.njwjsqbyp.domain.Account;
 
 public class AddAccountDialog extends AbstractAccountDialog {
+
+	private AccountDBService accountDBService;
 
 	public AddAccountDialog(Shell parentShell) {
 		super(parentShell);
@@ -16,7 +17,6 @@ public class AddAccountDialog extends AbstractAccountDialog {
 	@Override
 	protected void okPressed() {
 		Account account = getAccountFromFields();
-		AccountDBService accountDBService = Services.getAccountService();
 		accountDBService.addAccount(account);
 		super.okPressed();
 	}
@@ -27,4 +27,13 @@ public class AddAccountDialog extends AbstractAccountDialog {
 		setTitle("Add Account");
 		setMessage("Enter account details", IMessageProvider.INFORMATION);
 	}
+
+	public AccountDBService getAccountDBService() {
+		return accountDBService;
+	}
+
+	public void setAccountDBService(AccountDBService accountDBService) {
+		this.accountDBService = accountDBService;
+	}
+
 }

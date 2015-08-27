@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+import javax.inject.Singleton;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
@@ -12,6 +13,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
+import org.eclipse.e4.core.di.annotations.Creatable;
 import org.eclipse.persistence.config.PersistenceUnitProperties;
 
 import com.kerwin.tm.njwjsqbyp.database.AccountDBService;
@@ -19,6 +21,8 @@ import com.kerwin.tm.njwjsqbyp.database.AccountEvent;
 import com.kerwin.tm.njwjsqbyp.database.IAccountDBChangeObserver;
 import com.kerwin.tm.njwjsqbyp.domain.Account;
 
+@Singleton
+@Creatable
 public class AccountDBServiceImpl implements AccountDBService {
 
 	private EntityManagerFactory emf;

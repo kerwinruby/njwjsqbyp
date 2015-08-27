@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.kerwin.tm.njwjsqbyp.database.http">
+   <implementation class="com.kerwin.tm.njwjsqbyp.service.impl.HttpService"/>
+   <service>
+      <provide interface="com.kerwin.tm.njwjsqbyp.service.Http"/>
+   </service>
+   <reference bind="setValidator" cardinality="1..1" interface="com.kerwin.tm.njwjsqbyp.service.Validator" name="Validator" policy="static" unbind="unSetValidator"/>
+</scr:component>
